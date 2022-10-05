@@ -7,13 +7,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.jobtest.springbootTest.model.bean.table1;
+import com.jobtest.springbootTest.model.bean.Table1;
 
 @Repository
-public interface TestJobDao extends JpaRepository<table1,Integer>{
-	@Query("from table1 where idx = :idx and c_aes256 = :c_aes256 and c_base64 = :c_base64" )
-	public Optional<table1> findById(@Param("idx") Integer idx, 
-								 @Param("c_aes256") String c_aes256,
-								@Param("c_base64") String c_base64);
+public interface TestJobDao extends JpaRepository<Table1,Integer>{
+	@Query("from Table1 where id = :id and name = :name and age = :age" )
+	public Optional<Table1> findById(@Param("id") Integer id, 
+								 @Param("name") String name,
+								@Param("age") String age);
 
 }

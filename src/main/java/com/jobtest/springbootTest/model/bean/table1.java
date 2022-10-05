@@ -8,49 +8,97 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "table1")
-public class table1 {
+@Table(name = "Table1")
+public class Table1 {
 
-	public table1() {
+	public Table1() {
 		super();
 	}
 	
+	/**
+	 * @param id
+	 * @param name
+	 * @param age
+	 * @param pro_name
+	 * @param pro_num
+	 * @param pro_price
+	 */
+	public Table1(Integer id, String name, int age, String pro_name, String pro_num, String pro_price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.pro_name = pro_name;
+		this.pro_num = pro_num;
+		this.pro_price = pro_price;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idx")
-	private Integer idx;
+	@Column(name = "id")
+	private Integer id;
 	
-	@Column(name = "c_aes256")
-	private String c_aes256;
+	@Column(name = "name")
+	private String name;
 	
-	@Column(name = "c_base64")
-	private String c_base64;
-
-	public Integer getIdx() {
-		return idx;
-	}
-
-	public void setIdx(Integer idx) {
-		this.idx = idx;
-	}
-
-	public String getC_aes256() {
-		return c_aes256;
-	}
-
-	public void setC_aes256(String c_aes256) {
-		this.c_aes256 = c_aes256;
-	}
-
-	public String getC_base64() {
-		return c_base64;
-	}
-
-	public void setC_base64(String c_base64) {
-		this.c_base64 = c_base64;
-	}
-
+	@Column(name = "age")
+	private int age;
 	
+	@Column(name = "pro_name")
+	private String pro_name;
 	
+	@Column(name = "pro_num")
+	private String pro_num;
 	
+	@Column(name = "pro_price")
+	private String pro_price;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getPro_name() {
+		return pro_name;
+	}
+
+	public void setPro_name(String pro_name) {
+		this.pro_name = pro_name;
+	}
+
+	public String getPro_num() {
+		return pro_num;
+	}
+
+	public void setPro_num(String pro_num) {
+		this.pro_num = pro_num;
+	}
+
+	public String getPro_price() {
+		return pro_price;
+	}
+
+	public void setPro_price(String pro_price) {
+		this.pro_price = pro_price;
+	}
+
 }
